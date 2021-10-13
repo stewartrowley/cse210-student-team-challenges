@@ -22,7 +22,7 @@ class Director:
 
     def get_inputs(self):
     
-        guess = self.console.write("Guess a letter [a-z]: ")
+        guess = self.console.read("Guess a letter [a-z]: ")
 
         
  
