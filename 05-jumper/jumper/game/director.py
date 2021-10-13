@@ -22,13 +22,17 @@ class Director:
 
     def get_inputs(self):
     
-        message = self.jumper.get_message()
-        self.console.write(message)
-        
-    def do_updates(self):
-      
-        
-    def do_outputs(self):
+        guess = self.console.write("Guess a letter [a-z]: ")
 
         
+ 
+    def do_updates(self):
+      
+
+    def do_outputs(self):
+
+        output = self.board.display_word()
+        self.console.write(output)
+
+
     
