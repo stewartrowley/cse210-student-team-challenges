@@ -24,10 +24,11 @@ class Director:
     
         guess = self.console.read("Guess a letter [a-z]: ")
 
-        
  
     def do_updates(self):
-      
+        word = self.word_bank.get_word()
+        self.jumper.check_guess(word)
+
 
     def do_outputs(self):
 
