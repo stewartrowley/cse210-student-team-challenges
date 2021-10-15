@@ -23,9 +23,10 @@ class Director:
     def get_inputs(self):
     
         guess = self.console.read("Guess a letter [a-z]: ")
-
+        self.board.display_word(guess)
  
     def do_updates(self):
+        
         word = self.word_bank.get_word()
         self.jumper.check_guess(word)
 
