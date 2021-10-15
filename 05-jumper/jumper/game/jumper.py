@@ -3,16 +3,18 @@ class Jumper:
 
     def __init__(self):
         self.guess = []
+        self.wrong = 0
 
     def check_guess(self, word):
-        correct = False
+        
         for element in word:
             if self.guess[-1] == element:
-                correct = True
-        for element in self.guess:
-            if self.guess[-1] == element:
-                correct = False
-        return correct
+                self.wrong += 0
+        
+            elif self.guess[-1] != element:
+                
+                self.wrong += 1
+        return self.wrong
             
 
 
