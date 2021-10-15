@@ -13,8 +13,10 @@ class Director:
         self.word_bank = Word_Bank()
         self.keep_playing = True
         self.guess = ""
+        self.word = ""
         
     def start_game(self):
+        self.word = self.word_bank.get_word()
 
         while self.keep_playing:
             self.get_inputs()
@@ -23,21 +25,23 @@ class Director:
 
     def get_inputs(self):
     
+        
+        
         self.guess = self.console.read("Guess a letter [a-z]: ")
-
  
     def do_updates(self):
 
-        word = self.word_bank.get_word()
-        self.jumper.check_guess(word)
+        
+        self.jumper.check_guess(self.word, self.guess)
 
 
     def do_outputs(self):
-
-        output = self.board.display_word(self.guess)
-        self.console.write(output)
-        self.console.write(self.board.display_jumper(self.jumper.wrong))
-        self.keep_playing = (self.jumper.wrong != 5)
+        self.board.display_word(self.guess, self.word)
+        
+        self.board.display_jumper(self.jumper.wrong)
+        self.keep_playing = (self.board.check_win()) 
+        self.keep_playing = (self.jumper.wrong != 4)
+        
 
 
     
