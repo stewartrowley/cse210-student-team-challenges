@@ -36,7 +36,7 @@ class Director:
 
         output = self.board.display_word(self.guess)
         self.console.write(output)
-        self.board.display_jumper(self.jumper.wrong)
+        self.console.write(self.board.display_jumper(self.jumper.wrong))
         self.keep_playing = (self.jumper.wrong != 5)
 
 
