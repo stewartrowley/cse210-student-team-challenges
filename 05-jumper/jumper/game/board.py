@@ -23,25 +23,25 @@ class Board:
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
-        elif wrong >= 1:
+        elif wrong == 1:
             print(' /' + '___' + '\\')
             print(' ' + '\\' + '   ' + '/')
             print('  ' + '\\' + ' ' + '/')
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
-        elif wrong >= 2:
+        elif wrong == 2:
             print(' ' + '\\' + '   ' + '/')
             print('  ' + '\\' + ' ' + '/')
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
-        elif wrong >= 3:
+        elif wrong == 3:
             print('  ' + '\\' + ' ' + '/')
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
-        elif wrong >= 4:
+        elif wrong == 4:
             print('   x')
             print('  /|\\')
             print('  /' + ' ' + '\\')
