@@ -17,11 +17,14 @@ class Director:
         
     def start_game(self):
         self.word = self.word_bank.get_word()
+        self.board.display_word(self.guess, self.word)
+        print(" ")
 
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
             self.do_outputs()
+        print(f"The word was {self.word}")
 
     def get_inputs(self):
     

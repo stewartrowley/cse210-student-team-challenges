@@ -32,6 +32,7 @@ class Board:
     def display_jumper(self, wrong):
         print(' ')
         if wrong == 0:
+            print(' ')
             print(' ' + ' ' + '___')
             print(' /' + '___' + '\\')
             print(' ' + '\\' + '   ' + '/')
@@ -40,6 +41,7 @@ class Board:
             print('  /|\\')
             print('  /' + ' ' + '\\')
         elif wrong == 1:
+            print(' ')
             print(' /' + '___' + '\\')
             print(' ' + '\\' + '   ' + '/')
             print('  ' + '\\' + ' ' + '/')
@@ -47,17 +49,20 @@ class Board:
             print('  /|\\')
             print('  /' + ' ' + '\\')
         elif wrong == 2:
+            print(' ')
             print(' ' + '\\' + '   ' + '/')
             print('  ' + '\\' + ' ' + '/')
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
         elif wrong == 3:
+            print(' ')
             print('  ' + '\\' + ' ' + '/')
             print('   0')
             print('  /|\\')
             print('  /' + ' ' + '\\')
         elif wrong == 4:
+            print(' ')
             print('   x')
             print('  /|\\')
             print('  /' + ' ' + '\\')
