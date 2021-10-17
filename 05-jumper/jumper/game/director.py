@@ -18,6 +18,7 @@ class Director:
     def start_game(self):
         self.word = self.word_bank.get_word()
         self.board.display_word(self.guess, self.word)
+        self.board.display_jumper(self.jumper.wrong)
         print(" ")
 
         while self.keep_playing:
