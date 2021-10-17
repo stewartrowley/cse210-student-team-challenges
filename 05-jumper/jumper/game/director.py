@@ -43,8 +43,10 @@ class Director:
         self.board.display_word(self.guess, self.word)
         
         self.board.display_jumper(self.jumper.wrong)
-        self.keep_playing = (self.board.check_win()) 
-        self.keep_playing = (self.jumper.wrong != 4)
+        if self.keep_playing != (self.board.check_win()):
+            self.keep_playing = False
+        elif self.keep_playing != (self.jumper.wrong != 4):
+            self.keep_playing = False
         
 
 
