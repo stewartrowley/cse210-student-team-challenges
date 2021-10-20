@@ -11,7 +11,7 @@ class Director:
         self._board = Board()
         self._console = Console()
         self._keep_playing = True
-        self._move = None
+        self._guess = None
         self._roster = Roster()
         
     def start_game(self):
@@ -37,12 +37,12 @@ class Director:
         player = self._roster.get_current()
         self._console.write(f"{player.get_name()}'s turn:")
         guess = self._console.read_number("What is your guess ")
-        player.set_move(guess)
+        player.set_guess(guess)
 
     def _do_updates(self):
         
         player = self._roster.get_current()
-        guess = player.get_move()
+        guess = player.get_guess()
         self._board.apply(guess)
  
     def _do_outputs(self):
