@@ -42,12 +42,12 @@ class Director:
     def _do_updates(self):
         
         player = self._roster.get_current()
-        move = player.get_move()
-        self._board.apply(move)
+        guess = player.get_move()
+        self._board.apply(guess)
  
     def _do_outputs(self):
         
-        if self._board.is_empty():
+        if self._board.did_win():
             winner = self._roster.get_current()
             name = winner.get_name()
             print(f"\n{name} won!")
