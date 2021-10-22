@@ -14,6 +14,7 @@ class Director:
         self._guess = Guess(self._board.code)
         self._roster = Roster()
         
+        
     def start_game(self):
         
         self._prepare_game()
@@ -30,11 +31,11 @@ class Director:
             self._roster.add_player(player)
     
     def _get_inputs(self):
-        
+        player = self._roster.get_current()
         board = self._board.to_string(self._roster)
         self._console.write(board)
     
-        player = self._roster.get_current()
+        
         self._console.write(f"{player.get_name()}'s turn:")
         guess = self._console.read_number("What is your guess ")
         player.set_guess(guess)
