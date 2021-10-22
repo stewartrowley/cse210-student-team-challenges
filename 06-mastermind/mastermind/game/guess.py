@@ -3,7 +3,7 @@ class Guess:
         self.code = code
 
     def make_hint(self, guess):
-        get_hint = ""
+        get_hint = "****"
         for index, letter in enumerate(guess):
             if self.code[index] == letter:
                 get_hint += "x"
