@@ -2,12 +2,12 @@ import random
 class Board:
     def __init__(self):
         self.guess = 0
-        self.guess1 = 0
-        self.guess2 = 0
+        self.guess1 = '----'
+        self.guess2 = '----'
         self.code = 0
         self.hint = ""
-        self.hint1 = ""
-        self.hint2 = ""
+        self.hint1 = "****"
+        self.hint2 = "****"
         self._prepare()
         self.x = 0
 
@@ -30,13 +30,7 @@ class Board:
                 self.guess2 = guess
                 self.hint2 = hint
                 break
-        self.x += 1
-
-        
-        
-            
-
-
+        self.x += 1        
 
 
     def to_string(self, roster):

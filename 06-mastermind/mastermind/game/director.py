@@ -25,6 +25,9 @@ class Director:
 
     def _prepare_game(self):
         
+        welcome = "Welcome to Mastermind! \nThe object of the game is to guess the 4 digit code. \nYou only have 10 turns to guess it so be wise! Your hint will help you guess the code. \nIf you get an * then the number is not in the code. \nIf you get an o then the number is in the code but in the wrong spot. \nAnd finally if you get an x then the number is correct and in the right spot. \nMay the true Mastermind win!"
+        welcome += "\n~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        self._console.write(welcome)
         for n in range(2):
             name = self._console.read(f"Enter a name for player {n + 1}: ")
             player = Player(name)
