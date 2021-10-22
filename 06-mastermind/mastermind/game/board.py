@@ -3,6 +3,7 @@ class Board:
     def __init__(self):
         self.guess = 0
         self.code = 0
+        self.hint = ""
         self._prepare()
 
     def _prepare(self):
@@ -16,8 +17,8 @@ class Board:
 
     def to_string(self, roster):
         text = "\n--------------------"
-        text += (f"{roster.self.players[0]}: {self.guess}, {self.hint}")
-        text += (f"{roster.self.players[1]}: {self.guess}, {self.hint}")
+        text += (f"\n{roster.players[0]._name}: {self.guess}, {self.hint}")
+        text += (f"\n{roster.players[1]._name}: {self.guess}, {self.hint}")
         text += "\n--------------------"
         return text
 
