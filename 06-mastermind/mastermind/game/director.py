@@ -31,7 +31,7 @@ class Director:
     
     def _get_inputs(self):
         
-        board = self._board.to_string(Roster())
+        board = self._board.to_string(self._roster)
         self._console.write(board)
     
         player = self._roster.get_current()
@@ -43,7 +43,7 @@ class Director:
         
         player = self._roster.get_current()
         guess = player.get_guess()
-        hint = self._guess.make_hint()
+        hint = self._guess.make_hint(guess)
         self._board.apply(guess, hint)
  
     def _do_outputs(self):
