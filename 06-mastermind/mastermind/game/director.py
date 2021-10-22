@@ -57,6 +57,10 @@ class Director:
             name = winner.get_name()
             print(f"\n{name} won!")
             self._keep_playing = False
+        if self._board.is_gameover():
+            text = "Oh no, it looks like you didn't guess the code and you ran out of turns. \nBetter luck next time!"
+            self._console.write(text)
+            self._keep_playing = False
         self._roster.next_player()
 
      

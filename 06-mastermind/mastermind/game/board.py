@@ -20,7 +20,7 @@ class Board:
         self.hint = hint
         
         
-        while self.x < 10:
+        while self.x <= 10:
             if self.x % 2 == 0:
                 self.guess1 = guess
                 self.hint1 = hint
@@ -42,5 +42,9 @@ class Board:
 
     def did_win(self):
         if self.guess == self.code:
+            return True
+
+    def is_gameover(self):
+        if self.x > 10:
             return True
         
