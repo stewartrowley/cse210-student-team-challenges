@@ -1,6 +1,7 @@
 from game.actor import Actor
 import random
 from game import constants
+from game import Actor 
 
 class Word(Actor):
 
