@@ -13,13 +13,17 @@ class Buffer(Actor):
 
     def _check_word(self, word):
 
-        if word == self._buffer:
-            return True
-        else:     
-            return False 
-
+        input_list = []
+        
+        while word == self._buffer:
+            input_list.append(self.set_text())
+            return input_list
         
 
+
+            
+
+        
 
 
 
