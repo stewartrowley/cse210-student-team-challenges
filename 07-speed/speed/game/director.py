@@ -104,8 +104,7 @@ class Director:
             if self._letters == word:
                 self._words_to_remove.append(word)
                 points = self._word.get_points(word)
-                self._score_board.add_points(points)
-                
+                self._score_board.add_points(points)       
 
     def _generate_new_words(self):
         self._word._generate_word()
