@@ -11,7 +11,11 @@ class Buffer(Actor):
         position = Point(10, 475)
         self.set_position(position)
         self.set_text(f"Buffer: {self._buffer}")
+
+    def do_input(self):
         
+        self._buffer = 
+        self.set_text(f"Buffer: {self._buffer}")
 
     def _check_word(self, word):
 

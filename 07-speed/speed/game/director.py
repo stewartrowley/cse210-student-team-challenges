@@ -66,6 +66,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self._letters = self._input_service.get_letter()
+        self._buffer.get_text(self._letters)
         
 
     def _do_updates(self):
