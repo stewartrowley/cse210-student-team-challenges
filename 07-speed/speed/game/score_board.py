@@ -1,4 +1,5 @@
 import random
+from game import constants
 from game.actor import Actor
 from game.point import Point
 
@@ -32,5 +33,18 @@ class ScoreBoard(Actor):
         """
         self._points += points
         self.set_text(f"Score: {self._points}")
+
+    def subtract_point(self,point):
+        """Subtract point as words leave the screen and are not typed in. 
+
+        The opposite of add_point but with a condition. 
+
+        Conditions:
+            Needs to be pass MAX X
+
+        """
+        if constants.MAX_X > 
+            self._points -= points
+            self.set_text(f"Score: {self._points}")
 
        
