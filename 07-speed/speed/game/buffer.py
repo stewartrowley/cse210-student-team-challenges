@@ -10,16 +10,18 @@ class Buffer(Actor):
         position = Point(30, 10)
         self.set_position(position)
         self.set_text(f"Buffer: {self._buffer}")
+        self._buffer = str(input(""))
 
     def _check_word(self, word):
 
         if word == self._buffer:
             return True
-        else:     
-            return False 
+        else:
+            return False    
+       
+            
 
         
-
 
 
 
