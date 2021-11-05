@@ -34,6 +34,7 @@ class Director:
         self._output_service = output_service
         self._score_board = ScoreBoard()
         self._letters = ""
+        self._words_to_remove = []
         
         
     def start_game(self):
@@ -71,9 +72,15 @@ class Director:
 
         Args:
             self (Director): An instance of Director.
+            generate new words
+            move words 
+            remove words
         """
         
         self._handle_word_match()
+        self._generate_new_words()
+        self._move_words()
+        self._remove_words()
         
         
     def _do_outputs(self):
@@ -86,13 +93,26 @@ class Director:
         """
         self._output_service.clear_screen()
         
-        self._output_service.draw_actors(self._word_list)
+        self._output_service.draw_actors(self._word._word_list)
         self._output_service.draw_text(10, 10, self._letters, True)
         self._output_service.draw_actor(self._score_board)
         self._output_service.flush_buffer()
 
     def _handle_word_match(self):
-        if self._letters == self._word:
-            points = self._word.get_points()
-            self._score_board.add_points(points)
-            self._word_reset()
+        
+        for word in self._word._word_list:
+            if self._letters == word:
+                self._words_to_remove.append(word)
+                points = self._word.get_points(word)
+                self._score_board.add_points(points)
+                
+
+    def _generate_new_words(self):
+        pass
+
+    def _move_words(self):
+        pass
+
+    def _remove_words(self):
+        for word in self._words_to_remove:
+            self._word.reset(word)
