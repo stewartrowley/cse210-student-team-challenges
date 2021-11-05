@@ -6,11 +6,16 @@ class Buffer(Actor):
 
     def __init__(self):
         
+        super().__init__()
         self._buffer = ""
-        position = Point(30, 10)
+        position = Point(10, 475)
         self.set_position(position)
         self.set_text(f"Buffer: {self._buffer}")
-        self._buffer = str(input(""))
+
+    def do_input(self):
+        
+        self._buffer = 
+        self.set_text(f"Buffer: {self._buffer}")
 
     def _check_word(self, word):
 
@@ -18,11 +23,4 @@ class Buffer(Actor):
             return True
         else:
             return False    
-       
-            
-
-        
-
-
-
 

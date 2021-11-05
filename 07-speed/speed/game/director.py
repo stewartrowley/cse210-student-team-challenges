@@ -4,6 +4,7 @@ import raylibpy
 from game import constants
 from game.word import Word
 from game.score_board import ScoreBoard
+from game.buffer import Buffer
 
 
 class Director:
@@ -33,6 +34,7 @@ class Director:
         self._keep_playing = True
         self._output_service = output_service
         self._score_board = ScoreBoard()
+        self._buffer = Buffer()
         self._letters = ""
         self._words_to_remove = []
         
@@ -64,6 +66,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self._letters = self._input_service.get_letter()
+        self._buffer.get_text(self._letters)
         
 
     def _do_updates(self):
@@ -94,7 +97,7 @@ class Director:
         self._output_service.clear_screen()
         
         self._output_service.draw_actors(self._word._word_list)
-        self._output_service.draw_text(10, 475, "hello world", True)
+        self._output_service.draw_actor(self._buffer)
         self._output_service.draw_actor(self._score_board)
         self._output_service.flush_buffer()
 
@@ -110,8 +113,7 @@ class Director:
         self._word._generate_word()
 
     def _move_words(self):
-        for word in self._word._word_list:
-            word.move_next()
+        self._word.move_word()
 
     def _remove_words(self):
         for word in self._words_to_remove:

@@ -84,3 +84,4 @@ class Point:
             Point: A new Point that is reversed.
         """
         return self.scale(-1)
+        
