@@ -15,10 +15,14 @@ class Word(Actor):
 
 
     def _word(self):
-        for i in self._words:
+        for i in self._words(range(5)):
             self._words.append(self._word_list[i])
 
     def _generate_word(self):
+
+        for i in self._word_list:
+            Actor.set_velocity(0, -1)
+
         pass
         
     def _get_points(self, word):
@@ -27,5 +31,4 @@ class Word(Actor):
 
     def _reset(self, word):
         self._word_list.remove(word)
-
 
