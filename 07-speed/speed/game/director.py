@@ -94,7 +94,7 @@ class Director:
         self._output_service.clear_screen()
         
         self._output_service.draw_actors(self._word._word_list)
-        self._output_service.draw_text(10, 10, self._letters, True)
+        self._output_service.draw_text(10, 475, "hello world", True)
         self._output_service.draw_actor(self._score_board)
         self._output_service.flush_buffer()
 
@@ -108,10 +108,11 @@ class Director:
                 
 
     def _generate_new_words(self):
-        pass
+        self._word._generate_word()
 
     def _move_words(self):
-        pass
+        for word in self._word._word_list:
+            word.move_next()
 
     def _remove_words(self):
         for word in self._words_to_remove:
