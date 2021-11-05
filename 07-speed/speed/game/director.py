@@ -113,8 +113,7 @@ class Director:
         self._word._generate_word()
 
     def _move_words(self):
-        for word in self._word._word_list:
-            word.move_next()
+        self._word.move_word()
 
     def _remove_words(self):
         for word in self._words_to_remove:
