@@ -1,5 +1,5 @@
 import os
-os.environ['RAYLIB_BIN_PATH'] = r'C:\Users\StewM\Documents\BYU Idaho\Fall 2021\programmingCourses\CSE210_personal\cse210-student-solo-checkpoints-1\07-snake\libraylib_shared.dll'
+os.environ['RAYLIB_BIN_PATH'] = r'C:\Users\Kaden Spencer\myproject\cse210-student-solo-checkpoints-1\07-snake\raylib-2.0.0-Win64-mingw\raylib-2.0.0-Win64-mingw\lib'
 
 from game.director import Director
 from game.input_service import InputService
