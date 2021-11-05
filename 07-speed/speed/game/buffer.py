@@ -14,7 +14,6 @@ class Buffer(Actor):
 
     def do_input(self):
         
-        self._buffer = 
         self.set_text(f"Buffer: {self._buffer}")
 
     def _check_word(self, word):
