@@ -19,7 +19,11 @@ class Word(Actor):
             self._words.append(self._word_list[i])
 
     def _generate_word(self):
-        pass
+
+        for i in self._word_list:
+            word = random()
+
+        Actor.set_velocity(0, -1)
         
     def _get_points(self, word):
         self._points = len(word)
